@@ -1,0 +1,74 @@
+# Rakefile
+
+TEMPLATES = {
+  :default => "<html>
+  <head>
+    <script src='../js/opal/opal.js'></script>
+    <script src='../js/opal/opal-parser.js' /></script>    
+    <script src='../js/opal/opal-browser.js' /></script>
+    <script src='../js/opal/opal-ui.js'></script>    
+    
+    <script src='js/<APPLICATION>.js'></script>    
+    <script src='ruby/<APPLICATION>.rb' type='text/ruby'></script>
+    
+    <script>
+      /* ... */
+    </script>
+        
+    <script type='text/ruby'>
+      # ... 
+    </script>
+    
+    <link rel='stylesheet' type='text/css' href='css/<APPLICATION>.css'></link>
+  </head>
+  <body>
+    <script type='text/ruby'>
+      # ...
+    </script>	
+  </body>
+</html>\n",
+}
+
+task :opal do
+  sh "mkdir -p js/opal && wget http://cdn.opalrb.org/opal/current/opal.min.js -O js/opal/opal.js"
+end
+
+task :"opal-parser" do
+  sh "wget http://cdn.opalrb.org/opal/current/opal-parser.min.js -O js/opal/opal-parser.js"
+end
+
+task :"opal-browser" do
+  sh "opal-build --require opal-browser browser > js/opal/opal-browser.js"
+  sh "opal-build --require opal-browser browser/canvas > js/opal/opal-browser-canavs.js"
+end
+
+task :"opal-ui" do
+  sh "opal-build --require opal-ui ui > js/opal/opal-ui.js"
+end
+
+
+
+task :minify do
+    
+end
+
+task :build=>[:opal, :"opal-parser", :"opal-browser", :"opal-ui", :minify] do
+
+end
+
+task :create, :name, :template do |t, args|
+  sh "mkdir -p #{n=args["name"]}/js #{n}/ruby #{n}/css #{n}/images"  
+  template = (args["template"] || "default").to_sym
+  File.open("#{args[:name]}/index.html","w") do |f| f.puts TEMPLATES[template].gsub("<APPLICATION>", "#{args[:name]}") end
+  File.open("#{n}/ruby/#{n}.rb","w") do |f|
+    f.puts "# #{n} Opal Library\n"
+  end
+  
+  File.open("#{n}/css/#{n}.css","w") do |f|
+    f.puts "/* #{n} Style Sheet */\n"
+  end  
+  
+  File.open("#{n}/js/#{n}.js","w") do |f|
+    f.puts "/* #{n} Native Library */\n"
+  end   
+end
