@@ -1,5 +1,6 @@
 module PBR
   module OpalUI
+    # A Clickable, Focusable, Activatable Widget
     class Button < Widget
       include Focus
       include Activate
@@ -92,6 +93,7 @@ module PBR
       end
     end
 
+    # A List of Items
     class List < Container
       class Cell < Widget
         include Focus
@@ -152,11 +154,13 @@ module PBR
         self
       end
     end
-
+    
+    # A singleline editable text Widget
     class Entry < Widget
       include Activate
     end
 
+    # A multiline editable text Widget
     class TextView < Widget
 
     end

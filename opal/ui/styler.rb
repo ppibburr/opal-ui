@@ -12,6 +12,9 @@ module PBR
         @builder
       end
     
+      # Styles the Widget::Interface
+      # @param what [Widget::Interface] to style
+      # @param b [Proc] passed to Paggio::CSS#rule
       def style what, &b
         builder.rule("."+what.class_name) do |r|
           def r.active *a,&k
@@ -56,6 +59,7 @@ module PBR
         end
       end
       
+      # Applys the style
       def apply
         CSS(Paggio::Formatter.new.format(builder).to_s).append_to $document.head
       end    

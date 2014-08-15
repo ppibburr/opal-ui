@@ -7,6 +7,7 @@ end
 
 module PBR;
   module GetSetChain
+    # Defines setters, getters C Style, Ruby Style and JQuery Style
     def get_set_chain *o , &b
       dispatch = proc do |k, cb|
         delagate = nil
@@ -78,6 +79,7 @@ end
 module PBR
   module OpalUI;
     class Widget
+      # Implemented by Widget and widget interfaces
       module Interface
         def self.extended cls
           cls.send :extend, GetSetChain
@@ -91,6 +93,7 @@ module PBR
           styler.apply
         end        
         
+        # @return [String] the resolved css `class_name`
         def class_name
           @class_name ||= self.to_s.downcase.split("::").join("-")
         end
@@ -136,10 +139,14 @@ module PBR
         end
       end
       
+      # @return [String] the tag of the element to wrap
       def self.tag_name
         self::TAG_NAME
       end
       
+      # Renders an Image
+      #
+      # @return [Image] the resulting Image
       def rener_icon src
         element.inner_html = ""
         img = Image.new(src)
@@ -148,6 +155,7 @@ module PBR
         return img
       end
       
+      # Sets the inner_html
       def render_html html
         element.inner_html = html
       end
@@ -174,18 +182,24 @@ module PBR
         end
       end
       
+      # Register event listeners
       def on e, &b
         element.on(e, &b)
       end
       
+      # Removes an event listener
+      #
+      # @param what [Browser::DOM::Event::Callback] handler
       def off what
         element.off what
       end
       
+      # Sets the `on_keypress` handler
       def on_keypress &b
         on :keypress, &b
       end
       
+      # Sets the `on_click` handler
       def on_click &b
         on :click, &b
       end

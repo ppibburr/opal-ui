@@ -1,5 +1,6 @@
 module PBR
   module OpalUI
+    # A Widget that displays text
     class Label < Widget
       def initialize *o
         super
@@ -12,7 +13,7 @@ module PBR
       end
     end
 
-
+    # A Widget that displays an image
     class Image < Widget
       TAG_NAME = "IMG"
       get_set_chain :src do
@@ -24,6 +25,7 @@ end
 
 module PBR
   module OpalUI
+    # Widgets implementing focus availibility
     module Focus
       extend Widget::Interface
       def initialize *o
@@ -41,6 +43,7 @@ module PBR
       end
     end
 
+    # Widgets that `activate` to the `ENTER` key
     module Activate
       extend Widget::Interface
       include Focus
@@ -58,6 +61,9 @@ module PBR
         end
       end
       
+      # Activate the Widget
+      #
+      # @return [Activate] self
       def activate
         if !focused?
           focus()
@@ -66,13 +72,17 @@ module PBR
         element.add_class "pbr-opalui-active-activated"    
         
         @on_activate_cb.call(self) if @on_activate_cb
+        
+        return self
       end
       
+      # Sets the `on_activate` handler
       def on_activate(&b)
         @on_activate_cb = b
       end
     end
 
+    # Widgets implementing may have an icon rendered to the left or right
     module Iconable
       extend Widget::Interface
       
@@ -110,6 +120,7 @@ module PBR
         end
       end
       
+      # The content widget
       def content
         self.class::CONTENT_CLASS.wrap element.css(".pbr-opalui-iconable-content")[0]
       end
@@ -131,6 +142,7 @@ module PBR
       end
     end
     
+    # May be focused, may be activated, may be selected 
     module Item
       extend Widget::Interface
       include Activate
@@ -147,21 +159,29 @@ module PBR
         end
       end
 
+      # Selects the item
+      #
+      # @return [Item] self
       def select
         focus() unless focused?
         element.add_class "pbr-opalui-item-selected"
         @on_select_cb.call(self) if @on_select_cb
+        
+        @return self
       end
-      
+    
+      # @return [Boolean] true if selected
       def selected?
         element.class_names.index("pbr-opalui-item-selected")
       end
       
+      # Sets the `on_select` handler
       def on_select &b
         @on_select_cb = b
       end
     end
 
+    # Manages multiple items
     module HasItems
       extend Widget::Interface
 
@@ -173,6 +193,7 @@ module PBR
         @on_item_selected_cb = b
       end
       
+      # @return [Array<Item>] items
       def items &b
         raise "NotImplemented"
       end
@@ -181,14 +202,27 @@ module PBR
         manage_item(i)
       end
       
+      # Activate an Item
+      #
+      # @param i [Integer] index of the item to activate
+      #
+      # @return [HasItems] self
       def activate i
         items[i].activate
+        
+        return self
       end
       
+      # Selects an Item
+      #
+      # @param i [Integer] index of the item to select
+      #
+      # @return [HasItems] self
       def select i
         items[i].select
       end
       
+      # @return [Integer] index of the active item
       def active
         act = items.find do |i|
           i.element.class_names.index("pbr-opalui-active-activated")
@@ -197,6 +231,7 @@ module PBR
         items.index(act)
       end
       
+      # @return [Array<Integer>] indices of the selected item(s)      
       def selection
         sel = items.find_all do |i|
           i.element.class_names.index("pbr-opalui-item-selected")

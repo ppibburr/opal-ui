@@ -1,5 +1,6 @@
 module PBR
   module OpalUI
+    # A Widget whom may contain child(ren)
     class Container < Widget
       style do
         display :flex
@@ -10,10 +11,10 @@ module PBR
         end        
       end
 
-      def container_element
-        @container_element || element
-      end
-
+      # Adds a child Widget
+      #
+      # @param w [Widget] the child to add
+      # @return [Container] self
       def add w
         w.element.append_to container_element
         
@@ -30,6 +31,7 @@ module PBR
         return self
       end
       
+      # @return [Array<Widget>] children
       def children &b
         a = []
         
@@ -42,13 +44,24 @@ module PBR
         a
       end
       
+      # Iterate over children
+      #
+      # @yieldparam c [Widget] child
+      #
+      # @return [Container] self
       def iter &b
         children &b
         
         return self
       end
+      
+      private
+      def container_element
+        @container_element || element
+      end      
     end
 
+    # A Container that may only contain ONE child
     class Bin < Container
       def add w
         raise "`Bin##{self}` Already has child" unless children.length < 1
@@ -57,6 +70,7 @@ module PBR
       end
     end
 
+    # A Bin with a border around it with a label
     class Frame < Bin
       css "
        .pbr-opalui-frame-top-left {
@@ -104,7 +118,12 @@ module PBR
             flex-flow:row nowrap;
         }
 "      
-            
+      
+      get_set_chain :label do
+        [element.css(".pbr-opalui-frame-label")[0], :inner_text, :"inner_text="]
+      end
+      
+      private
       def init
         super
         
@@ -120,13 +139,10 @@ module PBR
       
       def container_element
         element.css(".pbr-opalui-frame-inner")[0]
-      end
-      
-      get_set_chain :label do
-        [element.css(".pbr-opalui-frame-label")[0], :inner_text, :"inner_text="]
-      end
+      end           
     end
 
+    # A Window
     class Window < Bin
       style do
         position :absolute
@@ -143,6 +159,7 @@ module PBR
       end
     end
 
+    # Box layout. Gtk+ style and flexbox. Laysout children along its major axis
     module Box
       extend Widget::Interface
 
@@ -168,6 +185,13 @@ module PBR
         self       
       end
       
+      # Adds a child with specofoed flex and padding
+      #
+      # @param w [Widget] child to add
+      # @param amt [Integer] amount of flex
+      # @param pad [Integer] amount of padding in addition to `#get_spacing`
+      #
+      # @return [Box] self
       def pack_flex w, amt=1, pad=0
         add w
         
@@ -178,6 +202,14 @@ module PBR
         self
       end
 
+      # Adds a child with specified rules for sizing
+      #
+      # @param w [Widget] child to add
+      # @param expand [Boolean] true to take up freespace
+      # @param fill [Boolean] true to fill the freespace. Only valid if +expand+ is true
+      # @param pad [Integer] amount of padding in addition to `#get_spacing`
+      #
+      # @return [Box] self
       def pack_start w, expand=false, fill=false, pad=0      
         if expand and !fill
           pad = $document.create_element("DIV")
@@ -248,6 +280,7 @@ module PBR
       end
     end
 
+    # A Box that laysout children along the Vertical axis
     class VBox < Container
       include Box
       
@@ -258,6 +291,7 @@ module PBR
       end
     end
 
+    # A Box that laysout children along the Horizontal axis
     class HBox < Container
       include Box
       
