@@ -167,7 +167,7 @@ module PBR
         element.add_class "pbr-opalui-item-selected"
         @on_select_cb.call(self) if @on_select_cb
         
-        @return self
+        return self
       end
     
       # @return [Boolean] true if selected

@@ -134,9 +134,7 @@ module PBR
         
         init()
         
-        options.each_pair do |k,v|
-          send(:"#{k}=", v) if respond_to? :"#{k}="
-        end
+        apply(options)
       end
       
       # @return [String] the tag of the element to wrap
@@ -202,6 +200,14 @@ module PBR
       # Sets the `on_click` handler
       def on_click &b
         on :click, &b
+      end
+      
+      def apply(options={})
+        options.each_pair do |k,v|
+          send(:"#{k}=", v) if respond_to? :"#{k}="
+        end
+        
+        return self      
       end
       
       private

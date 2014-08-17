@@ -67,6 +67,18 @@ module PBR
         padding left: 1.px
       end
 
+      style PBR::OpalUI::Accordian do
+        
+      end
+      
+      style PBR::OpalUI::Accordian::Item do
+        border [1.px, :solid, :black]
+      end 
+      
+      style PBR::OpalUI::Accordian::Item::Header do
+        border [1.px, :solid, :black]
+      end       
+
       style PBR::OpalUI::List do    
         Helper.border(self)
         background color: :white

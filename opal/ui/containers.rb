@@ -68,6 +68,10 @@ module PBR
         
         super
       end
+      
+      def child
+        children[0]
+      end
     end
 
     # A Bin with a border around it with a label
@@ -182,7 +186,7 @@ module PBR
       def add w
         super
         pad_child c=children.last, c.element.style[:"padding-#{self.class.get_padding_type[0]}"].to_i-spacing() 
-        self       
+        return self       
       end
       
       # Adds a child with specofoed flex and padding
@@ -199,7 +203,7 @@ module PBR
         
         pad_child w, pad
         
-        self
+        return self
       end
 
       # Adds a child with specified rules for sizing
@@ -300,6 +304,99 @@ module PBR
       style do
         flex flow: [:row, :nowrap]
       end
+    end
+    
+    class Accordian < Container
+      include HasItems 
+      
+      style do
+        display :flex
+        rule ".pbr-opalui-accordian-item" do
+          flex [0,0,:auto]
+        end         
+        
+        rule ".pbr-opalui-item-selected" do
+          flex [1,1,:auto, "!important"]
+        end           
+      end
+      
+      class Item < Bin
+        style do
+          flex [0, 0, :auto]
+          
+          rule ".#{Item.class_name}-inner" do
+            display :flex
+            flex [1, 1, :auto]
+          end
+        end
+      
+        class Header < Widget
+          style do
+            display :flex
+            flex [0, 1, :auto]
+            min height: 1.5.em
+            flex flow: [:row, :nowrap]
+          end
+          
+          include Iconable
+          CONTENT_CLASS = Label
+          
+          get_set_chain :label do
+            [content, :text, :"text="]
+          end
+        end
+      
+        include PBR::OpalUI::Focus
+        include PBR::OpalUI::Activate
+        include PBR::OpalUI::Item
+        def init *o
+          super
+          header = Header.new
+          header.element.append_to element
+          header.element.add_class "pbr-opalui-button"
+          w = Widget.new
+          w.element.add_class "pbr-opalui-accordian-item-inner"
+          w.element.append_to element
+        end
+        
+        def container_element
+          element.css(".pbr-opalui-accordian-item-inner")[0]
+        end
+        
+        def header
+          Header.wrap element.css(".pbr-opalui-accordian-item-header")[0]
+        end
+        
+        get_set_chain :label, :icon do
+          header
+        end
+      end
+      
+      def append(opts={}, &b)
+        item = self.class::Item.new
+        
+        if w = opts.delete(:child)
+          item.add(w)
+        end
+        
+        item.apply(opts)
+        
+        append_item item
+        
+        add item
+        
+        item.select if children.length == 1
+        
+        b.call(item) if b
+      
+        return self
+      end 
+      
+      def items &b
+        children &b
+      end       
+      
+      private :add
     end
   end
 end
