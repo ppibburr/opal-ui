@@ -39,9 +39,9 @@ add(
         nb.page(2)
       end
     )
-    
-    item.select
-  end
+  end.
+  
+  item(1)
 )
 
 ```

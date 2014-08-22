@@ -452,6 +452,21 @@ module PBR
         end
       end
       
+      def item *o
+        # Delay the event. Helps with initial page load
+        # Delay the setting a very tiny amount
+      
+        if !o.empty?
+          after 0.1 do |_|
+            set_item o[0]
+          end
+          
+          self
+        else
+          super
+        end
+      end
+      
       # Appends an Item
       #
       # @param opts [Hash] options
@@ -490,7 +505,11 @@ module PBR
       #
       # @return [Array<PBR::OpalUI::Accordian::Item>] list of items
       def items &b
-        children &b
+        children.map do |c|
+          c = Item.wrap(c.element)
+          b.call c if b
+          c
+        end
       end       
       
       private :add
