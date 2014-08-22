@@ -71,12 +71,21 @@ module PBR
         
       end
       
-      style PBR::OpalUI::Accordian::Item do
-        border [1.px, :solid, :black]
+      style PBR::OpalUI::Accordian::Item do      
+        rule "&.pbr-opalui-item-selected .pbr-opalui-accordian-item-header" do
+          background "-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f9f9f9), color-stop(1, #e9e9e9) );"       
+        end
       end 
       
       style PBR::OpalUI::Accordian::Item::Header do
-        border [1.px, :solid, :black]
+        background "-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #98faff), color-stop(1, #a9e3d8) );"       
+        font size: :small
+        border [1.px, :solid, "#a9a9a9"]
+        
+        rule "span" do 
+          vertical align: :middle
+          style "align-self", :center       
+        end
       end       
 
       style PBR::OpalUI::List do    

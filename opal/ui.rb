@@ -1,4 +1,5 @@
 require "browser/canvas"
+require "browser/delay"
 require "ui/screen"
 require "ui/styler"
 require "ui/widget"

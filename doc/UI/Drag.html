@@ -1,0 +1,632 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: UI::Drag
+  
+    &mdash; Documentation by YARD 0.8.7.4
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../';
+  framesUrl = "../frames.html#!UI/Drag.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (D)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../UI.html" title="UI (module)">UI</a></span></span>
+     &raquo; 
+    <span class="title">Drag</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: UI::Drag
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">opal/ui/drag.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+  <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#drag_target-instance_method" title="#drag_target (instance method)">- (Object) <strong>drag_target</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute drag_target.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#do_drag-instance_method" title="#do_drag (instance method)">- (Object) <strong>do_drag</strong>(x, y) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Move the target.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#drag_start-instance_method" title="#drag_start (instance method)">- (Object) <strong>drag_start</strong>(evt) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Called on `mousedown`.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#drag_stop-instance_method" title="#drag_stop (instance method)">- (Object) <strong>drag_stop</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Stop dragging.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#init_drag-instance_method" title="#init_drag (instance method)">- (::UI::Widget) <strong>init_drag</strong>(target = self) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>set the dragging state and add the `mousedown` event listener.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id="drag_target=-instance_method"></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="drag_target-instance_method">
+  
+    - (<tt>Object</tt>) <strong>drag_target</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute drag_target</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3
+4
+5</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'opal/ui/drag.rb', line 3</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_drag_target'>drag_target</span>
+  <span class='ivar'>@drag_target</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="do_drag-instance_method">
+  
+    - (<tt>Object</tt>) <strong>do_drag</strong>(x, y) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Move the target</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>x</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>y</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+71
+72
+73
+74</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'opal/ui/drag.rb', line 71</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_do_drag'>do_drag</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='rparen'>)</span>   
+  <span class='id identifier rubyid_drag_target'>drag_target</span><span class='period'>.</span><span class='id identifier rubyid_element'>element</span><span class='period'>.</span><span class='id identifier rubyid_style'>style</span><span class='period'>.</span><span class='id identifier rubyid_left'>left</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_x'>x</span><span class='rbrace'>}</span><span class='tstring_content'>px</span><span class='tstring_end'>&quot;</span></span><span class='semicolon'>;</span>
+  <span class='id identifier rubyid_drag_target'>drag_target</span><span class='period'>.</span><span class='id identifier rubyid_element'>element</span><span class='period'>.</span><span class='id identifier rubyid_style'>style</span><span class='period'>.</span><span class='id identifier rubyid_top'>top</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_y'>y</span><span class='rbrace'>}</span><span class='tstring_content'>px</span><span class='tstring_end'>&quot;</span></span><span class='semicolon'>;</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="drag_start-instance_method">
+  
+    - (<tt>Object</tt>) <strong>drag_start</strong>(evt) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Called on `mousedown`</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>evt</span>
+      
+      
+        <span class='type'>(<tt>Browser::DOM::Event</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the event</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'opal/ui/drag.rb', line 44</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_drag_start'>drag_start</span> <span class='id identifier rubyid_evt'>evt</span> 
+  <span class='id identifier rubyid_evt'>evt</span> <span class='op'>=</span> <span class='id identifier rubyid_evt'>evt</span> <span class='op'>||</span> <span class='id identifier rubyid_window'>window</span><span class='period'>.</span><span class='id identifier rubyid_event'>event</span><span class='semicolon'>;</span>
+
+  <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='id identifier rubyid_evt'>evt</span><span class='period'>.</span><span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_x'>x</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span> 
+  <span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='id identifier rubyid_evt'>evt</span><span class='period'>.</span><span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_y'>y</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>  
+
+  <span class='id identifier rubyid_top'>top</span> <span class='op'>=</span> <span class='id identifier rubyid_drag_target'>drag_target</span><span class='period'>.</span><span class='id identifier rubyid_element'>element</span><span class='period'>.</span><span class='id identifier rubyid_style'>style</span><span class='lbracket'>[</span><span class='symbol'>:top</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>    
+  <span class='id identifier rubyid_left'>left</span> <span class='op'>=</span> <span class='id identifier rubyid_drag_target'>drag_target</span><span class='period'>.</span><span class='id identifier rubyid_element'>element</span><span class='period'>.</span><span class='id identifier rubyid_style'>style</span><span class='lbracket'>[</span><span class='symbol'>:left</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='semicolon'>;</span>  
+  
+
+  <span class='ivar'>@dragging</span> <span class='op'>=</span> <span class='lbrace'>{</span>
+    <span class='symbol'>:diff_x</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_x'>x</span> <span class='op'>-</span> <span class='id identifier rubyid_left'>left</span><span class='comma'>,</span> 
+    <span class='symbol'>:diff_y</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_y'>y</span> <span class='op'>-</span> <span class='id identifier rubyid_top'>top</span>
+  <span class='rbrace'>}</span>    
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="drag_stop-instance_method">
+  
+    - (<tt>Object</tt>) <strong>drag_stop</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Stop dragging. release the listeners attached to `$document.body`</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+61
+62
+63
+64
+65</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'opal/ui/drag.rb', line 61</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_drag_stop'>drag_stop</span>     
+  <span class='ivar'>@dragging</span> <span class='op'>=</span> <span class='kw'>false</span>
+  <span class='gvar'>$document</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='period'>.</span><span class='id identifier rubyid_off'>off</span> <span class='ivar'>@mouse_up_cb</span>
+  <span class='gvar'>$document</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='period'>.</span><span class='id identifier rubyid_off'>off</span> <span class='ivar'>@mouse_move_cb</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="init_drag-instance_method">
+  
+    - (<tt>::UI::Widget</tt>) <strong>init_drag</strong>(target = self) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>set the dragging state and add the `mousedown` event listener</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>target</span>
+      
+      
+        <span class='type'>(<tt>::UI::Widget</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>self</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the widget to drag</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>::UI::Widget</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'opal/ui/drag.rb', line 10</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_init_drag'>init_drag</span><span class='lparen'>(</span><span class='id identifier rubyid_target'>target</span><span class='op'>=</span><span class='kw'>self</span><span class='rparen'>)</span>
+  <span class='ivar'>@dragging</span> <span class='op'>=</span> <span class='kw'>false</span>
+  <span class='ivar'>@drag_target</span> <span class='op'>=</span> <span class='id identifier rubyid_target'>target</span>
+  
+  <span class='id identifier rubyid_on'>on</span> <span class='symbol'>:mousedown</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_e'>e</span><span class='op'>|</span>
+    <span class='id identifier rubyid_drag_start'>drag_start</span> <span class='id identifier rubyid_e'>e</span>    
+  
+    <span class='comment'># have the body listen for `mouseup` to stop dragging
+</span>    <span class='ivar'>@mouse_up_cb</span> <span class='op'>=</span> <span class='gvar'>$document</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='period'>.</span><span class='id identifier rubyid_on'>on</span> <span class='symbol'>:mouseup</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_e'>e</span><span class='op'>|</span>
+      <span class='id identifier rubyid_drag_stop'>drag_stop</span>
+    <span class='kw'>end</span>       
+
+    <span class='comment'># have the body listen for `mousemove`
+</span>    <span class='ivar'>@mouse_move_cb</span> <span class='op'>=</span> <span class='gvar'>$document</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='period'>.</span><span class='id identifier rubyid_on'>on</span> <span class='symbol'>:mousemove</span>  <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_evt'>evt</span><span class='op'>|</span> 
+      <span class='kw'>next</span> <span class='kw'>unless</span> <span class='ivar'>@dragging</span>
+      
+      <span class='id identifier rubyid_evt'>evt</span> <span class='op'>=</span> <span class='id identifier rubyid_evt'>evt</span> <span class='op'>||</span> <span class='id identifier rubyid_window'>window</span><span class='period'>.</span><span class='id identifier rubyid_event'>event</span><span class='semicolon'>;</span>
+
+      <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='id identifier rubyid_evt'>evt</span><span class='period'>.</span><span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_x'>x</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>        
+      <span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='id identifier rubyid_evt'>evt</span><span class='period'>.</span><span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_y'>y</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>       
+
+      <span class='id identifier rubyid_nx'>nx</span> <span class='op'>=</span> <span class='id identifier rubyid_x'>x</span> <span class='op'>-</span> <span class='ivar'>@dragging</span><span class='lbracket'>[</span><span class='symbol'>:diff_x</span><span class='rbracket'>]</span>     
+      <span class='id identifier rubyid_ny'>ny</span> <span class='op'>=</span> <span class='id identifier rubyid_y'>y</span> <span class='op'>-</span> <span class='ivar'>@dragging</span><span class='lbracket'>[</span><span class='symbol'>:diff_y</span><span class='rbracket'>]</span>
+
+      <span class='id identifier rubyid_do_drag'>do_drag</span><span class='lparen'>(</span><span class='id identifier rubyid_nx'>nx</span><span class='comma'>,</span><span class='id identifier rubyid_ny'>ny</span><span class='rparen'>)</span><span class='semicolon'>;</span> 
+    <span class='kw'>end</span> 
+  <span class='kw'>end</span>
+  
+  <span class='kw'>return</span> <span class='kw'>self</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Tue Aug 19 20:41:37 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

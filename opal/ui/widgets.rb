@@ -1,23 +1,57 @@
 module PBR
-  module OpalUI
+  module OpalUI    
     # A Widget that displays text
     class Label < Widget
+      include Widget::HasTextPropery
+      
+      # @example
+      #   Label.new(:text=>"FooBar")
       def initialize *o
         super
         
         $document.create_element("SPAN").append_to element
       end
-    
-      get_set_chain :text do
-        [element.css("span")[0], :inner_text, :"inner_text="]
+      
+      private
+      def text_element
+        element.css("span")[0]
       end
     end
 
     # A Widget that displays an image
     class Image < Widget
       TAG_NAME = "IMG"
-      get_set_chain :src do
-        element
+      
+      #!@method initialize(opts={})
+      # @example
+      #  Image.new(:src=>"images/foo.png"
+      
+      # !@method src(*val)
+      # Sets or retieves the Image's url
+      # @param val [String] pass to set the url, omit to retrieve
+      # @return [Widget|String]
+      
+      # !@method set_src(val)
+      # Sets the Image's url
+      # @param val [String] the url to set
+      # @return [void]
+      
+      # !@method get_src()
+      # Retrieves the Image's url
+      # @return [String] the url
+      
+      # !@method src=(val)
+      # Sets the Image's url
+      # @param val [String] the url to set
+      # @return [String] +val+         
+      get_set_chain :src do |t,k,*o|
+        if :get == t
+          element[:src] 
+        else
+          proc do |t,k,val,*a|
+            element[:src] = val
+          end
+        end
       end
     end
   end
@@ -32,14 +66,27 @@ module PBR
         super
         
         element[:tabindex] = "0"
+      
+        on :focus do
+          $document.css(".pbr-opalui-widget-has-focus").each do |c|
+            c.remove_class "pbr-opalui-widget-has-focus"
+          end
+          element.add_class "pbr-opalui-widget-has-focus" 
+          
+          @on_focus_cb.call          if @on_focus_cb
+        end
       end
       
       def focus()
-        `#@element.native.focus`
+        `#@element.native.focus();`
       end
       
       def focused?
-        element.css(":focused")[0] == element
+        !!element.class_names.index("pbr-oplaui-widget-has-focus")
+      end
+      
+      def on_focus &b
+        @on_focus_cb = b
       end
     end
 
@@ -95,7 +142,7 @@ module PBR
         end   
       end
       
-      def initialize
+      def init *o,&b
         super
         
         img = Image.new
@@ -109,22 +156,34 @@ module PBR
         icon_pos(:left)
       end
       
-      get_set_chain :icon do |k,*o|
-        proc do |t,k,val|
-          case t
-          when :get
-            Image.wrap element.css(".pbr-opalui-iconable-icon")[0]
-          else
-            element.css(".pbr-opalui-iconable-icon")[0][:src] = val
-          end
-        end
+      def icon_widget
+        Image.wrap element.css(".pbr-opalui-iconable-icon")[0]
       end
       
       # The content widget
+      # @return [Widget]
       def content
         self.class::CONTENT_CLASS.wrap element.css(".pbr-opalui-iconable-content")[0]
       end
       
+      # @!method icon_pos(*val)
+      # Set or Retrieve the Widgets icon location: :left or :right
+      # @param val [Symbol] pass to set the icon location, omit to retrieve the icon location
+      # @return [Widget|Symbol]
+      
+      # @!method icon_pos=(val)
+      # Sets the Widgets icon location
+      # @param val [Symbol] the location of the icon
+      # @return [Symbol] +val+
+      
+      # @!method get_icon_pos()
+      # Gets the Widget's icon location
+      # @return [Symbol]
+      
+      # @!method set_icon_pos(val)
+      # Sets the Widgets icon location
+      # @param val [Symbol] the location of the icon
+      # @return [void]    
       get_set_chain :icon_pos do
         proc do |t, k, val|
           case t
@@ -151,10 +210,10 @@ module PBR
         white space: :nowrap;
       end
 
-      def initialize *o
+      def init *o
         super
         
-        element.on :focus do
+        on_focus do
           select
         end
       end
@@ -164,9 +223,11 @@ module PBR
       # @return [Item] self
       def select
         focus() unless focused?
+      
         element.add_class "pbr-opalui-item-selected"
+      
         @on_select_cb.call(self) if @on_select_cb
-        
+      
         return self
       end
     
@@ -184,12 +245,19 @@ module PBR
     # Manages multiple items
     module HasItems
       extend Widget::Interface
+ 
+      get_set_chain :item do 
+        proc do |t,k,val,*o|
+          t == :set ? activate(val) : items[val]
+        end
+      end
 
       def on_item_activate &b
         @on_item_activated_cb = b
       end
       
       def on_item_select &b
+        p :ON_SEL, self, !!b
         @on_item_selected_cb = b
       end
       
@@ -220,6 +288,8 @@ module PBR
       # @return [HasItems] self
       def select i
         items[i].select
+        
+        return self
       end
       
       # @return [Integer] index of the active item
@@ -235,10 +305,10 @@ module PBR
       def selection
         sel = items.find_all do |i|
           i.element.class_names.index("pbr-opalui-item-selected")
-        end
+        end.map do |s| s.element end
       
         sel.map do |i|
-          items.index(i)
+          items.map do |i| i.element end.index(i)
         end
       end
       
@@ -260,12 +330,12 @@ module PBR
       end
       
       def manage_item i
-        i.on :focus do
+        i.on_select do
           items.each do |c|
             next if c.element == i.element
             c.element.remove_class "pbr-opalui-item-selected"
           end
-          
+
           @on_item_selected_cb.call(self, i) if @on_item_selected_cb
         end
         
@@ -278,6 +348,6 @@ module PBR
           @on_item_activated_cb.call(self, w) if @on_item_activated_cb
         end
       end
-    end    
+    end
   end
 end

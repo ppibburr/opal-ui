@@ -1,0 +1,787 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: PBR::OpalUI::HasItems
+  
+    &mdash; Documentation by YARD 0.8.7.4
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../../';
+  framesUrl = "../../frames.html#!PBR/OpalUI/HasItems.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../_index.html">Index (H)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../PBR.html" title="PBR (module)">PBR</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../OpalUI.html" title="PBR::OpalUI (module)">OpalUI</a></span></span>
+     &raquo; 
+    <span class="title">HasItems</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: PBR::OpalUI::HasItems
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+      <dt class="r1">Extended by:</dt>
+      <dd class="r1"><span class='object_link'><a href="Widget/Interface.html" title="PBR::OpalUI::Widget::Interface (module)">Widget::Interface</a></span></dd>
+      
+    
+  
+    
+  
+  
+    <dt class="r2">Included in:</dt>
+    <dd class="r2"><span class='object_link'><a href="Accordian.html" title="PBR::OpalUI::Accordian (class)">Accordian</a></span>, <span class='object_link'><a href="List.html" title="PBR::OpalUI::List (class)">List</a></span></dd>
+    
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">opal/ui/widgets.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Manages multiple items</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#activate-instance_method" title="#activate (instance method)">- (HasItems) <strong>activate</strong>(i) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Activate an Item.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#active-instance_method" title="#active (instance method)">- (Integer) <strong>active</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Index of the active item.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#append_item-instance_method" title="#append_item (instance method)">- (Object) <strong>append_item</strong>(i) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#items-instance_method" title="#items (instance method)">- (Array&lt;Item&gt;) <strong>items</strong>(&amp;b) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Items.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#on_item_activate-instance_method" title="#on_item_activate (instance method)">- (Object) <strong>on_item_activate</strong>(&amp;b) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#on_item_select-instance_method" title="#on_item_select (instance method)">- (Object) <strong>on_item_select</strong>(&amp;b) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#select-instance_method" title="#select (instance method)">- (HasItems) <strong>select</strong>(i) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Selects an Item.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#selection-instance_method" title="#selection (instance method)">- (Array&lt;Integer&gt;) <strong>selection</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Indices of the selected item(s).</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Widget/Interface.html" title="PBR::OpalUI::Widget::Interface (module)">Widget::Interface</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Widget/Interface.html#class_name-instance_method" title="PBR::OpalUI::Widget::Interface#class_name (method)">class_name</a></span>, <span class='object_link'><a href="Widget/Interface.html#css-instance_method" title="PBR::OpalUI::Widget::Interface#css (method)">css</a></span>, <span class='object_link'><a href="Widget/Interface.html#extended-class_method" title="PBR::OpalUI::Widget::Interface.extended (method)">extended</a></span>, <span class='object_link'><a href="Widget/Interface.html#style-instance_method" title="PBR::OpalUI::Widget::Interface#style (method)">style</a></span></p>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="activate-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="PBR::OpalUI::HasItems (module)">HasItems</a></span></tt>) <strong>activate</strong>(i) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Activate an Item</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>i</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>index of the item to activate</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="PBR::OpalUI::HasItems (module)">HasItems</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+255
+256
+257
+258
+259</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'opal/ui/widgets.rb', line 255</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_activate'>activate</span> <span class='id identifier rubyid_i'>i</span>
+  <span class='id identifier rubyid_items'>items</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_activate'>activate</span>
+  
+  <span class='kw'>return</span> <span class='kw'>self</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="active-instance_method">
+  
+    - (<tt>Integer</tt>) <strong>active</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns index of the active item</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>index of the active item</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+271
+272
+273
+274
+275
+276
+277</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'opal/ui/widgets.rb', line 271</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_active'>active</span>
+  <span class='id identifier rubyid_act'>act</span> <span class='op'>=</span> <span class='id identifier rubyid_items'>items</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_i'>i</span><span class='op'>|</span>
+    <span class='id identifier rubyid_i'>i</span><span class='period'>.</span><span class='id identifier rubyid_element'>element</span><span class='period'>.</span><span class='id identifier rubyid_class_names'>class_names</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>pbr-opalui-active-activated</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  
+  <span class='id identifier rubyid_items'>items</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='id identifier rubyid_act'>act</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="append_item-instance_method">
+  
+    - (<tt>Object</tt>) <strong>append_item</strong>(i) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+246
+247
+248</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'opal/ui/widgets.rb', line 246</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_append_item'>append_item</span> <span class='id identifier rubyid_i'>i</span>
+  <span class='id identifier rubyid_manage_item'>manage_item</span><span class='lparen'>(</span><span class='id identifier rubyid_i'>i</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="items-instance_method">
+  
+    - (<tt>Array&lt;<span class='object_link'><a href="Item.html" title="PBR::OpalUI::Item (module)">Item</a></span>&gt;</tt>) <strong>items</strong>(&amp;b) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns items</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;<span class='object_link'><a href="Item.html" title="PBR::OpalUI::Item (module)">Item</a></span>&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>items</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+242
+243
+244</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'opal/ui/widgets.rb', line 242</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_items'>items</span> <span class='op'>&amp;</span><span class='id identifier rubyid_b'>b</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>NotImplemented</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="on_item_activate-instance_method">
+  
+    - (<tt>Object</tt>) <strong>on_item_activate</strong>(&amp;b) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+233
+234
+235</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'opal/ui/widgets.rb', line 233</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_on_item_activate'>on_item_activate</span> <span class='op'>&amp;</span><span class='id identifier rubyid_b'>b</span>
+  <span class='ivar'>@on_item_activated_cb</span> <span class='op'>=</span> <span class='id identifier rubyid_b'>b</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="on_item_select-instance_method">
+  
+    - (<tt>Object</tt>) <strong>on_item_select</strong>(&amp;b) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+237
+238
+239</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'opal/ui/widgets.rb', line 237</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_on_item_select'>on_item_select</span> <span class='op'>&amp;</span><span class='id identifier rubyid_b'>b</span>
+  <span class='ivar'>@on_item_selected_cb</span> <span class='op'>=</span> <span class='id identifier rubyid_b'>b</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="select-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="PBR::OpalUI::HasItems (module)">HasItems</a></span></tt>) <strong>select</strong>(i) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Selects an Item</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>i</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>index of the item to select</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="PBR::OpalUI::HasItems (module)">HasItems</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+266
+267
+268</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'opal/ui/widgets.rb', line 266</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_select'>select</span> <span class='id identifier rubyid_i'>i</span>
+  <span class='id identifier rubyid_items'>items</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_select'>select</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="selection-instance_method">
+  
+    - (<tt>Array&lt;Integer&gt;</tt>) <strong>selection</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns indices of the selected item(s)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;Integer&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>indices of the selected item(s)</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+280
+281
+282
+283
+284
+285
+286
+287
+288</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'opal/ui/widgets.rb', line 280</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_selection'>selection</span>
+  <span class='id identifier rubyid_sel'>sel</span> <span class='op'>=</span> <span class='id identifier rubyid_items'>items</span><span class='period'>.</span><span class='id identifier rubyid_find_all'>find_all</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_i'>i</span><span class='op'>|</span>
+    <span class='id identifier rubyid_i'>i</span><span class='period'>.</span><span class='id identifier rubyid_element'>element</span><span class='period'>.</span><span class='id identifier rubyid_class_names'>class_names</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>pbr-opalui-item-selected</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_sel'>sel</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_i'>i</span><span class='op'>|</span>
+    <span class='id identifier rubyid_items'>items</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='id identifier rubyid_i'>i</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Tue Aug 19 20:41:39 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

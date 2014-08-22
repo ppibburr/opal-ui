@@ -5,6 +5,7 @@ module PBR
       include Focus
       include Activate
       include Iconable
+      include Widget::HasLabelProperty
       
       CONTENT_CLASS = Label
       
@@ -74,8 +75,8 @@ module PBR
     }
     "
     
-      get_set_chain :label do
-        [content,:text,:"text="]
+      def label_widget
+        content
       end
       
       def init
@@ -99,15 +100,12 @@ module PBR
         include Focus
         include Activate
         include Item
-
+        include Widget::HasTextPropery
+        
         css do
           rule ".pbr-opalui-list-cell" do
             flex "0 0 1em !important"
           end
-        end
-        
-        get_set_chain :value do
-          [element, :inner_text, :"inner_text="]
         end
         
         private
@@ -157,12 +155,18 @@ module PBR
     
     # A singleline editable text Widget
     class Entry < Widget
+      include Focus
       include Activate
+      include Iconable
+      include Widget::HasTextPropery
+      include Editable
     end
 
     # A multiline editable text Widget
     class TextView < Widget
-
+      include Focus
+      include Widget::HasTextPropery
+      include Editable  
     end
   end
 end

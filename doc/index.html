@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII" />
+<title>
+  File: README
+  
+    &mdash; Documentation by YARD 0.8.7.4
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!file.README.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><div id='filecontents'><h1>opal-ui</h1>
+
+<p>GUI ToolKit inpsired by Gtk for use with opal and opal-browser</p>
+
+<h1>Example (Standard)</h1>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_screen'>screen</span> <span class='op'>=</span> <span class='const'>UI</span><span class='op'>::</span><span class='const'>Screen</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='period'>.</span><span class='id identifier rubyid_bg_image'>bg_image</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>url(http://images4.alphacoders.com/214/214394.jpg)</span><span class='tstring_end'>&quot;</span></span>
+
+<span class='id identifier rubyid_w'>w</span> <span class='op'>=</span> <span class='op'>::</span><span class='const'>UI</span><span class='op'>::</span><span class='const'>Window</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='id identifier rubyid_w'>w</span><span class='period'>.</span><span class='id identifier rubyid_title'>title</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Opal UI: demo</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_w'>w</span><span class='period'>.</span><span class='id identifier rubyid_append_to'>append_to</span> <span class='id identifier rubyid_screen'>screen</span>
+<span class='id identifier rubyid_w'>w</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='id identifier rubyid_v'>v</span> <span class='op'>=</span> <span class='op'>::</span><span class='const'>UI</span><span class='op'>::</span><span class='const'>VBox</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+
+<span class='id identifier rubyid_v'>v</span><span class='period'>.</span><span class='id identifier rubyid_pack_start'>pack_start</span> <span class='op'>::</span><span class='const'>UI</span><span class='op'>::</span><span class='const'>ToggleButton</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='comma'>,</span> <span class='kw'>false</span><span class='comma'>,</span><span class='kw'>false</span><span class='comma'>,</span><span class='int'>0</span>
+<span class='id identifier rubyid_v'>v</span><span class='period'>.</span><span class='id identifier rubyid_pack_start'>pack_start</span> <span class='op'>::</span><span class='const'>UI</span><span class='op'>::</span><span class='const'>TextView</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='comma'>,</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='int'>0</span>
+<span class='id identifier rubyid_v'>v</span><span class='period'>.</span><span class='id identifier rubyid_pack_start'>pack_start</span> <span class='id identifier rubyid_h'>h</span><span class='op'>=</span><span class='op'>::</span><span class='const'>UI</span><span class='op'>::</span><span class='const'>HBox</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='comma'>,</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='int'>0</span>
+
+<span class='id identifier rubyid_h'>h</span><span class='period'>.</span><span class='id identifier rubyid_pack_start'>pack_start</span> <span class='id identifier rubyid_b1'>b1</span><span class='op'>=</span><span class='op'>::</span><span class='const'>UI</span><span class='op'>::</span><span class='const'>Button</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='comma'>,</span> <span class='kw'>true</span><span class='comma'>,</span><span class='kw'>false</span><span class='comma'>,</span><span class='int'>0</span>
+<span class='id identifier rubyid_h'>h</span><span class='period'>.</span><span class='id identifier rubyid_pack_start'>pack_start</span> <span class='id identifier rubyid_b2'>b2</span><span class='op'>=</span><span class='op'>::</span><span class='const'>UI</span><span class='op'>::</span><span class='const'>Button</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='comma'>,</span> <span class='kw'>true</span><span class='comma'>,</span><span class='kw'>false</span><span class='comma'>,</span><span class='int'>0</span>
+<span class='id identifier rubyid_h'>h</span><span class='period'>.</span><span class='id identifier rubyid_pack_start'>pack_start</span> <span class='id identifier rubyid_b3'>b3</span><span class='op'>=</span><span class='op'>::</span><span class='const'>UI</span><span class='op'>::</span><span class='const'>Button</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='comma'>,</span> <span class='kw'>true</span><span class='comma'>,</span><span class='kw'>false</span><span class='comma'>,</span><span class='int'>0</span>
+
+<span class='id identifier rubyid_b1'>b1</span><span class='period'>.</span><span class='id identifier rubyid_label'>label</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>A Button</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_b2'>b2</span><span class='period'>.</span><span class='id identifier rubyid_label'>label</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>A Button</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_b3'>b3</span><span class='period'>.</span><span class='id identifier rubyid_label'>label</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>A Button</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h1>Example: &#39;dsl&#39; inspired from <code>shoes</code></h1>
+
+<pre class="code ruby"><code class="ruby"><span class='op'>::</span><span class='const'>UI</span><span class='op'>::</span><span class='const'>Screen</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>body</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_app'>app</span><span class='lparen'>(</span><span class='symbol'>:title</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Opal UI: demo.rb</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span> 
+  <span class='id identifier rubyid_stack'>stack</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_toggle'>toggle</span><span class='lparen'>(</span><span class='symbol'>:expand</span> <span class='op'>=&gt;</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='symbol'>:fill</span> <span class='op'>=&gt;</span> <span class='kw'>false</span><span class='rparen'>)</span>
+
+    <span class='id identifier rubyid_text'>text</span><span class='lparen'>(</span><span class='symbol'>:name</span><span class='op'>=&gt;</span><span class='symbol'>:text</span><span class='rparen'>)</span>
+
+    <span class='id identifier rubyid_entry'>entry</span><span class='lparen'>(</span><span class='symbol'>:expand</span> <span class='op'>=&gt;</span> <span class='kw'>false</span><span class='comma'>,</span>
+          <span class='symbol'>:fill</span> <span class='op'>=&gt;</span> <span class='kw'>false</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_image'>image</span><span class='period'>.</span><span class='id identifier rubyid_modify'>modify</span><span class='lparen'>(</span><span class='symbol'>:src</span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://google.com/favicon.ico</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span>
+                                               <span class='symbol'>:size</span><span class='op'>=&gt;</span><span class='lbracket'>[</span><span class='int'>24</span><span class='comma'>,</span><span class='int'>24</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+
+    <span class='id identifier rubyid_flow'>flow</span><span class='lparen'>(</span><span class='symbol'>:expand</span> <span class='op'>=&gt;</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='symbol'>:fill</span> <span class='op'>=&gt;</span> <span class='kw'>false</span><span class='rparen'>)</span> <span class='kw'>do</span>
+      <span class='int'>3</span><span class='period'>.</span><span class='id identifier rubyid_times'>times</span> <span class='kw'>do</span>
+        <span class='id identifier rubyid_button'>button</span><span class='lparen'>(</span><span class='symbol'>:label</span><span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>A Button</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+
+</code></pre>
+</div></div>
+
+    <div id="footer">
+  Generated on Tue Aug 19 20:41:37 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

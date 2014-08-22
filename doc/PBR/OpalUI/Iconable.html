@@ -1,0 +1,730 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: PBR::OpalUI::Iconable
+  
+    &mdash; Documentation by YARD 0.8.7.4
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../../';
+  framesUrl = "../../frames.html#!PBR/OpalUI/Iconable.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../_index.html">Index (I)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../PBR.html" title="PBR (module)">PBR</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../OpalUI.html" title="PBR::OpalUI (module)">OpalUI</a></span></span>
+     &raquo; 
+    <span class="title">Iconable</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: PBR::OpalUI::Iconable
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+      <dt class="r1">Extended by:</dt>
+      <dd class="r1"><span class='object_link'><a href="Widget/Interface.html" title="PBR::OpalUI::Widget::Interface (module)">Widget::Interface</a></span></dd>
+      
+    
+  
+    
+  
+  
+    <dt class="r2">Included in:</dt>
+    <dd class="r2"><span class='object_link'><a href="Accordian/Item/Header.html" title="PBR::OpalUI::Accordian::Item::Header (class)">Accordian::Item::Header</a></span>, <span class='object_link'><a href="Button.html" title="PBR::OpalUI::Button (class)">Button</a></span>, <span class='object_link'><a href="Entry.html" title="PBR::OpalUI::Entry (class)">Entry</a></span></dd>
+    
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">opal/ui/widgets.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>Widgets implementing may have an icon rendered to the left or right</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#content-instance_method" title="#content (instance method)">- (Widget) <strong>content</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The content widget.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_icon_pos-instance_method" title="#get_icon_pos (instance method)">- (Symbol) <strong>get_icon_pos</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Gets the Widget's icon location.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#icon_pos-instance_method" title="#icon_pos (instance method)">- (Widget|Symbol) <strong>icon_pos</strong>(*val) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Set or Retrieve the Widgets icon location: :left or :right.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#icon_pos%3D-instance_method" title="#icon_pos= (instance method)">- (Symbol) <strong>icon_pos=</strong>(val) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets the Widgets icon location.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#icon_widget-instance_method" title="#icon_widget (instance method)">- (Object) <strong>icon_widget</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (Object) <strong>initialize</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#set_icon_pos-instance_method" title="#set_icon_pos (instance method)">- (void) <strong>set_icon_pos</strong>(val) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets the Widgets icon location.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Widget/Interface.html" title="PBR::OpalUI::Widget::Interface (module)">Widget::Interface</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Widget/Interface.html#class_name-instance_method" title="PBR::OpalUI::Widget::Interface#class_name (method)">class_name</a></span>, <span class='object_link'><a href="Widget/Interface.html#css-instance_method" title="PBR::OpalUI::Widget::Interface#css (method)">css</a></span>, <span class='object_link'><a href="Widget/Interface.html#extended-class_method" title="PBR::OpalUI::Widget::Interface.extended (method)">extended</a></span>, <span class='object_link'><a href="Widget/Interface.html#style-instance_method" title="PBR::OpalUI::Widget::Interface#style (method)">style</a></span></p>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="content-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Widget.html" title="PBR::OpalUI::Widget (class)">Widget</a></span></tt>) <strong>content</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>The content widget</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Widget.html" title="PBR::OpalUI::Widget (class)">Widget</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+151
+152
+153</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'opal/ui/widgets.rb', line 151</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_content'>content</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='op'>::</span><span class='const'>CONTENT_CLASS</span><span class='period'>.</span><span class='id identifier rubyid_wrap'>wrap</span> <span class='id identifier rubyid_element'>element</span><span class='period'>.</span><span class='id identifier rubyid_css'>css</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>.pbr-opalui-iconable-content</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_icon_pos-instance_method">
+  
+    - (<tt>Symbol</tt>) <strong>get_icon_pos</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Gets the Widget's icon location</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'opal/ui/widgets.rb', line 165</span>
+
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="icon_pos-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Widget.html" title="PBR::OpalUI::Widget (class)">Widget</a></span>|Symbol</tt>) <strong>icon_pos</strong>(*val) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Set or Retrieve the Widgets icon location: :left or :right</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>val</span>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>pass to set the icon location, omit to retrieve the icon location</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Widget.html" title="PBR::OpalUI::Widget (class)">Widget</a></span>|Symbol</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'opal/ui/widgets.rb', line 155</span>
+
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="icon_pos=-instance_method">
+  
+    - (<tt>Symbol</tt>) <strong>icon_pos=</strong>(val) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets the Widgets icon location</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>val</span>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the location of the icon</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p><tt>val</tt></p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'opal/ui/widgets.rb', line 160</span>
+
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="icon_widget-instance_method">
+  
+    - (<tt>Object</tt>) <strong>icon_widget</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+145
+146
+147</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'opal/ui/widgets.rb', line 145</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_icon_widget'>icon_widget</span>
+  <span class='const'>Image</span><span class='period'>.</span><span class='id identifier rubyid_wrap'>wrap</span> <span class='id identifier rubyid_element'>element</span><span class='period'>.</span><span class='id identifier rubyid_css'>css</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>.pbr-opalui-iconable-icon</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="initialize-instance_method">
+  
+    - (<tt>Object</tt>) <strong>initialize</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'opal/ui/widgets.rb', line 131</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span>
+  <span class='kw'>super</span>
+  
+  <span class='id identifier rubyid_img'>img</span> <span class='op'>=</span> <span class='const'>Image</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+  <span class='id identifier rubyid_img'>img</span><span class='period'>.</span><span class='id identifier rubyid_element'>element</span><span class='period'>.</span><span class='id identifier rubyid_append_to'>append_to</span> <span class='id identifier rubyid_element'>element</span>
+  <span class='id identifier rubyid_img'>img</span><span class='period'>.</span><span class='id identifier rubyid_element'>element</span><span class='period'>.</span><span class='id identifier rubyid_add_class'>add_class</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>pbr-opalui-iconable-icon</span><span class='tstring_end'>&quot;</span></span>
+
+  <span class='id identifier rubyid_content'>content</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='op'>::</span><span class='const'>CONTENT_CLASS</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_content'>content</span><span class='period'>.</span><span class='id identifier rubyid_element'>element</span><span class='period'>.</span><span class='id identifier rubyid_append_to'>append_to</span> <span class='id identifier rubyid_element'>element</span>
+  <span class='id identifier rubyid_content'>content</span><span class='period'>.</span><span class='id identifier rubyid_element'>element</span><span class='period'>.</span><span class='id identifier rubyid_add_class'>add_class</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>pbr-opalui-iconable-content</span><span class='tstring_end'>&quot;</span></span>    
+  
+  <span class='id identifier rubyid_icon_pos'>icon_pos</span><span class='lparen'>(</span><span class='symbol'>:left</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="set_icon_pos-instance_method">
+  
+    - (<tt>void</tt>) <strong>set_icon_pos</strong>(val) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note returns_void">This method returns an undefined value.</p>
+<p>Sets the Widgets icon location</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>val</span>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the location of the icon</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'opal/ui/widgets.rb', line 173</span>
+
+<span class='id identifier rubyid_get_set_chain'>get_set_chain</span> <span class='symbol'>:icon_pos</span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_proc'>proc</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_t'>t</span><span class='comma'>,</span> <span class='id identifier rubyid_k'>k</span><span class='comma'>,</span> <span class='id identifier rubyid_val'>val</span><span class='op'>|</span>
+    <span class='kw'>case</span> <span class='id identifier rubyid_t'>t</span>
+    <span class='kw'>when</span> <span class='symbol'>:get</span>
+      <span class='ivar'>@icon_pos</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Bad position for icon </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_val'>val</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>unless</span> <span class='lbracket'>[</span><span class='symbol'>:left</span><span class='comma'>,</span> <span class='symbol'>:right</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='id identifier rubyid_val'>val</span><span class='rparen'>)</span>
+    
+      <span class='id identifier rubyid_icon'>icon</span><span class='period'>.</span><span class='id identifier rubyid_element'>element</span><span class='period'>.</span><span class='id identifier rubyid_add_class'>add_class</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>pbr-opalui-iconable-icon-</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_val'>val</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+      <span class='id identifier rubyid_content'>content</span><span class='period'>.</span><span class='id identifier rubyid_element'>element</span><span class='period'>.</span><span class='id identifier rubyid_add_class'>add_class</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>pbr-opalui-iconable-content-</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_val'>val</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+      
+      <span class='ivar'>@icon_pos</span> <span class='op'>=</span> <span class='id identifier rubyid_val'>val</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Tue Aug 19 20:41:39 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

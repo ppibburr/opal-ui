@@ -1,0 +1,477 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: PBR::OpalUI::Item
+  
+    &mdash; Documentation by YARD 0.8.7.4
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../../';
+  framesUrl = "../../frames.html#!PBR/OpalUI/Item.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../_index.html">Index (I)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../PBR.html" title="PBR (module)">PBR</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../OpalUI.html" title="PBR::OpalUI (module)">OpalUI</a></span></span>
+     &raquo; 
+    <span class="title">Item</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: PBR::OpalUI::Item
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+      <dt class="r1">Extended by:</dt>
+      <dd class="r1"><span class='object_link'><a href="Widget/Interface.html" title="PBR::OpalUI::Widget::Interface (module)">Widget::Interface</a></span></dd>
+      
+    
+  
+    
+      <dt class="r2">Includes:</dt>
+      <dd class="r2"><span class='object_link'><a href="Activate.html" title="PBR::OpalUI::Activate (module)">Activate</a></span></dd>
+      
+    
+  
+  
+    <dt class="r1">Included in:</dt>
+    <dd class="r1"><span class='object_link'><a href="Accordian/Item.html" title="PBR::OpalUI::Accordian::Item (class)">Accordian::Item</a></span>, <span class='object_link'><a href="List/Cell.html" title="PBR::OpalUI::List::Cell (class)">List::Cell</a></span></dd>
+    
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">opal/ui/widgets.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>May be focused, may be activated, may be selected</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (Object) <strong>initialize</strong>(*o) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#on_select-instance_method" title="#on_select (instance method)">- (Object) <strong>on_select</strong>(&amp;b) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Sets the `on_select` handler.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#select-instance_method" title="#select (instance method)">- (Item) <strong>select</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Selects the item.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#selected%3F-instance_method" title="#selected? (instance method)">- (Boolean) <strong>selected?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>True if selected.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Widget/Interface.html" title="PBR::OpalUI::Widget::Interface (module)">Widget::Interface</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Widget/Interface.html#class_name-instance_method" title="PBR::OpalUI::Widget::Interface#class_name (method)">class_name</a></span>, <span class='object_link'><a href="Widget/Interface.html#css-instance_method" title="PBR::OpalUI::Widget::Interface#css (method)">css</a></span>, <span class='object_link'><a href="Widget/Interface.html#extended-class_method" title="PBR::OpalUI::Widget::Interface.extended (method)">extended</a></span>, <span class='object_link'><a href="Widget/Interface.html#style-instance_method" title="PBR::OpalUI::Widget::Interface#style (method)">style</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Activate.html" title="PBR::OpalUI::Activate (module)">Activate</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Activate.html#activate-instance_method" title="PBR::OpalUI::Activate#activate (method)">#activate</a></span>, <span class='object_link'><a href="Activate.html#on_activate-instance_method" title="PBR::OpalUI::Activate#on_activate (method)">#on_activate</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods included from <span class='object_link'><a href="Focus.html" title="PBR::OpalUI::Focus (module)">Focus</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Focus.html#focus-instance_method" title="PBR::OpalUI::Focus#focus (method)">#focus</a></span>, <span class='object_link'><a href="Focus.html#focused%3F-instance_method" title="PBR::OpalUI::Focus#focused? (method)">#focused?</a></span></p>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    - (<tt>Object</tt>) <strong>initialize</strong>(*o) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+199
+200
+201
+202
+203
+204
+205</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'opal/ui/widgets.rb', line 199</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span> <span class='op'>*</span><span class='id identifier rubyid_o'>o</span>
+  <span class='kw'>super</span>
+  
+  <span class='id identifier rubyid_element'>element</span><span class='period'>.</span><span class='id identifier rubyid_on'>on</span> <span class='symbol'>:focus</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_select'>select</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="on_select-instance_method">
+  
+    - (<tt>Object</tt>) <strong>on_select</strong>(&amp;b) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Sets the `on_select` handler</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+224
+225
+226</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'opal/ui/widgets.rb', line 224</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_on_select'>on_select</span> <span class='op'>&amp;</span><span class='id identifier rubyid_b'>b</span>
+  <span class='ivar'>@on_select_cb</span> <span class='op'>=</span> <span class='id identifier rubyid_b'>b</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="select-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="PBR::OpalUI::Item (module)">Item</a></span></tt>) <strong>select</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Selects the item</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="PBR::OpalUI::Item (module)">Item</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+210
+211
+212
+213
+214
+215
+216</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'opal/ui/widgets.rb', line 210</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_select'>select</span>
+  <span class='id identifier rubyid_focus'>focus</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_focused?'>focused?</span>
+  <span class='id identifier rubyid_element'>element</span><span class='period'>.</span><span class='id identifier rubyid_add_class'>add_class</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>pbr-opalui-item-selected</span><span class='tstring_end'>&quot;</span></span>
+  <span class='ivar'>@on_select_cb</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='ivar'>@on_select_cb</span>
+  
+  <span class='kw'>return</span> <span class='kw'>self</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="selected?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>selected?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns true if selected</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>true if selected</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+219
+220
+221</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'opal/ui/widgets.rb', line 219</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_selected?'>selected?</span>
+  <span class='id identifier rubyid_element'>element</span><span class='period'>.</span><span class='id identifier rubyid_class_names'>class_names</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>pbr-opalui-item-selected</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Tue Aug 19 20:41:39 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.4 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>
