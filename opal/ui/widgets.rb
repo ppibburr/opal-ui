@@ -257,7 +257,6 @@ module PBR
       end
       
       def on_item_select &b
-        p :ON_SEL, self, !!b
         @on_item_selected_cb = b
       end
       

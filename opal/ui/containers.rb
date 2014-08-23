@@ -1,4 +1,4 @@
-require "ui/container.rb"
+require "ui/container"
 require "ui/bin"
 require "ui/box"
 require "ui/frame"
