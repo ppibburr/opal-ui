@@ -1,4 +1,4 @@
-module UI
+module PBR::OpalUI
   module Drag
     attr_accessor :drag_target;
     

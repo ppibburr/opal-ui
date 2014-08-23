@@ -243,6 +243,26 @@ module PBR
         end
       end
       
+      # Widgets contents overflow is scrolled
+      module Scrollable
+        extend Widget::Interface
+        
+        style do
+          overflow :auto
+        end
+        
+        def init *o
+          super
+          
+          scrollable_element.add_class "#{Scrollable.class_name}"
+        end
+        
+        private
+        def scrollable_element
+          element
+        end
+      end
+      
       attr_reader :element
       
       # @param options [Hash] key/val where keys are setter method names

@@ -167,6 +167,7 @@ module PBR
       include Focus
       include Widget::HasTextPropery
       include Editable  
+      include Widget::Scrollable
     end
   end
 end
