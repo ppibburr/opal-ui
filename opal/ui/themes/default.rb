@@ -17,7 +17,21 @@ module PBR
       style PBR::OpalUI::Window do
         Helper.border(self, color: "#B6A5A5")
         background color: "#D6D6CE"
-        resize! :both  
+        box shadow:[4.px, 5.px, 17.px, "#090909"]
+        border [1.px, :solid, "#413A3A"]
+      end
+      
+      style PBR::OpalUI::Window::Titlebar do
+        cursor :move
+        background "-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #FFFFFF), color-stop(1, #3A3A3A) )"
+      
+        rule "span" do
+          font size: :medium;
+          font family: 'sans-serif';
+          color "#000";
+          text shadow: "1px 1px rgb(203, 171, 171), -1px -1px #C7B2B2";
+          padding left:3.px        
+        end     
       end
         
       style PBR::OpalUI::Frame do
@@ -73,18 +87,35 @@ module PBR
       
       style PBR::OpalUI::Accordian::Item do      
         rule "&.pbr-opalui-item-selected .pbr-opalui-accordian-item-header" do
-          background "-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f9f9f9), color-stop(1, #e9e9e9) );"       
+          background "-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #98faff), color-stop(1, #465955) )"       
+          
+          rule "span" do
+            text shadow:"1px 1px rgb(203, 171, 171), -1px -1px #C7B2B2";  
+          end
         end
       end 
       
       style PBR::OpalUI::Accordian::Item::Header do
-        background "-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #98faff), color-stop(1, #a9e3d8) );"       
-        font size: :small
-        border [1.px, :solid, "#a9a9a9"]
+        background "-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f9f9f9), color-stop(1, #9F9E9E) )"       
+        border [1.px, :solid, "#5a5a5a"]
+        max height:1.1.em
         
         rule "span" do 
           vertical align: :middle
           style "align-self", :center       
+          font size: :medium
+          color :black  
+          text shadow: "1px 1px rgb(255, 255, 255), -1px -1px #BCAEAE"                
+        end
+        
+        rule "&:hover" do
+          background "-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #9F9E9E), color-stop(1, #f9f9f9) )"
+        end
+        
+        rule "img" do
+          margin right: 3.px;
+          max height: 1.1.em        
+          style "align-self", "center"
         end
       end       
 
@@ -112,7 +143,11 @@ module PBR
      
       style PBR::OpalUI::Widget do
         resize! :none
-        color "#7A3333"
+        color "#000"
+        
+        rule "&.pbr-opalui-widget-insensitive" do
+          opacity 0.8
+        end
       end         
     end
   end

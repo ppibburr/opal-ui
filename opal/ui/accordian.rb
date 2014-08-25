@@ -7,7 +7,7 @@ module PBR
       style do
         display :flex       
         
-        rule ".pbr-opalui-item-selected" do
+        rule ".pbr-opalui-accordian-item.pbr-opalui-item-selected" do
           flex [1,1,:auto, "!important"]
       
           rule ".pbr-opalui-accordian-item-inner" do
@@ -45,13 +45,13 @@ module PBR
           style do
             display :flex
             flex [0, 1, :auto]
-            height 1.5.em
+            height 1.1.em
             flex flow: [:row, :nowrap]
             padding 3.px
             
             rule ".pbr-opalui-iconable-icon" do
-              height 1.5.em
-              max height: 1.5.em
+              height 1.1.em
+              max height: 1.1.em
             end
           end
           

@@ -125,7 +125,7 @@ module PBR
       def init
         super
         
-        element.on :keypress do |e|
+        on :keypress do |e|
           if (e.code == 38)
             select_pior()
             next false;

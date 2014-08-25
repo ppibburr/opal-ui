@@ -39,6 +39,10 @@ class PBR::OpalUI::Notebook < PBR::OpalUI::Container
         border bottom:0
         background "-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f9f9f9), color-stop(1, #e9e9e9) );"       
       end
+      
+      rule "&:hover" do
+        background "-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #e9e9e9), color-stop(1, #f9f9f9) );"      
+      end
     end
     
     def label_widget
@@ -150,6 +154,22 @@ class PBR::OpalUI::Notebook < PBR::OpalUI::Container
         
     return self
   end
+  
+  def sensitive(*o)
+    result = super
+    
+    header_widget.sensitive(*o)
+    
+    return result
+  end
+  
+  def events_enabled(*o)
+    result = super
+    
+    header_widget.events_enabled(*o)
+    
+    return result
+  end  
   
   # The number of Pages
   # @return [Integer]

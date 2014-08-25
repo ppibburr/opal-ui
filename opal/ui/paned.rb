@@ -20,9 +20,11 @@ class PBR::OpalUI
     
       style do
         order 1
-        flex [0, 1, 15.px]
-        min height:15.px
+        flex [0, 1, 8.px]
+        min height:8.px
         style "-webkit-user-select", :none
+        cursor "col-resize"
+        background "-webkit-linear-gradient(left, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%)"    
       end
       
       def drag_start *o

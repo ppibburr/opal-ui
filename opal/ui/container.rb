@@ -11,6 +11,16 @@ module PBR
         end        
       end
 
+      def sensitive *o
+        result = super
+        
+        children do |c|
+          c.events_enabled(*o)
+        end
+        
+        return result
+      end
+
       # Adds a child Widget
       #
       # @param w [Widget] the child to add
@@ -18,6 +28,10 @@ module PBR
       def add w,&b
         w.element.append_to container_element
         
+        if !sensitive() or !events_enabled()
+          w.events_enabled(false)
+        end
+       
         bool = false
         
         self.class.ancestors.reverse.each do |q|

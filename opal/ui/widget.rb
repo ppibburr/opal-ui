@@ -241,6 +241,18 @@ module PBR
           super
           text_element["contenteditable"] = true
         end
+        
+      def sensitive bool
+        super
+        
+        if bool
+          element["contenteditable"] = true
+        else
+          element["contenteditable"] = false
+        end
+        
+        return self
+      end        
       end
       
       # Widgets contents overflow is scrolled
@@ -297,6 +309,135 @@ module PBR
         
         return img
       end
+      
+      get_set_chain :events_enabled do
+        proc do |t,k,val,_|
+          if t == :set
+            if !!val
+              element.remove_class "#{PBR::OpalUI::Widget.class_name}-noevent"
+            else
+              element.add_class "#{PBR::OpalUI::Widget.class_name}-noevent"
+            end
+          else
+            !element.class_names.index("#{PBR::OpalUI::Widget.class_name}-noevent")
+          end
+        end      
+      end
+      
+      class Throb
+        def initialize widget, &b
+          @block = b
+          @widget = widget
+          @int = nil
+          @running = false
+        end
+      
+        def set_block &b
+          @block = b
+        end
+      
+         def running?
+           @running
+         end
+      
+        def run(int=0.1)
+          @state = @widget.sensitive()
+          @running = true
+          @widget.sensitive(false) if @widget.insensitive_on_throb()
+        
+          @int = int
+        
+          @proc ||= proc do
+            @block.call(self) if @block
+            if !running?
+              @widget.sensitive(@state) if @widget.insensitive_on_throb() 
+            end
+          end
+          
+          @interval = @proc.every(@int)
+        end
+        
+        alias :throb :run
+        
+        def stop
+          @running = false
+          @interval.stop   
+          @widget.sensitive(@state) if @widget.insensitive_on_throb()                 
+        end
+      end
+      
+      class << self
+        extend GetSetChain
+        
+        get_set_chain :insensitive_on_throb
+      end
+      
+      insensitive_on_throb(true)
+      
+      get_set_chain :insensitive_on_throb do |t,k,_|
+        proc do |t,k,val,_|
+          t == :set ? @insensitive_on_throb = val : @insensitive_on_throb == nil ? self.class.insensitive_on_throb : @insensitive_on_throb
+        end
+      end
+      
+      get_set_chain :throb do |t,k,*o|
+        amt = 0.1
+        down = false
+        top = opacity
+        
+        if !@throb
+          @throb = Throb.new(self) do |t|
+            if opacity() <= 0.11
+              down = true
+              amt = amt*-1
+            elsif down and opacity() >= top
+              amt = amt*-1
+              down = false
+            end
+            opacity(opacity()-amt)
+          end
+          
+          def @throb.start
+            @opacity = @widget.opacity()
+            super
+          end
+          
+          def @throb.stop
+            super
+            
+            @widget.opacity(@opacity)
+          end          
+        end
+        
+        proc do |t,k,val,_|
+          if t == :get
+            next @throb
+          end
+          
+          val ? @throb.run() : @throb.stop()
+        end
+      end
+      
+      def throbbing?
+        return get_throb.running?
+      end
+      
+      get_set_chain :sensitive do
+        proc do |t,k,val,_|
+          if t == :set
+            next if throbbing? and insensitive_on_throb()
+            
+            if !!val
+              element.remove_class "#{PBR::OpalUI::Widget.class_name}-insensitive"
+            else
+              element.add_class "#{PBR::OpalUI::Widget.class_name}-insensitive"
+            end
+          else
+            !element.class_names.index("#{PBR::OpalUI::Widget.class_name}-insensitive")
+          end
+        end
+      end
+    
       
       # Sets the inner_html
       # @param html [String] innerHTML
@@ -407,8 +548,16 @@ module PBR
       # Sets the widget's color
       # @param val [String] the color to set to
       # @return [void]           
-      get_set_chain :height, :width, :top, :left, :color do
-        next element.style
+      get_set_chain :height, :width, :top, :left, :color, :opacity do |t,k,_|
+        if t == :set 
+         next element.style 
+        elsif k == :color
+          [element.style![:color] || element.style[:color], :to_s, nil]
+        elsif k == :opacity
+          [element.style![:opacity] || (!element.style[:opacity] ? 1 : element.style[:opacity]), :to_f, nil]
+        else
+          [element.style![k] || element.style[k], :to_i, nil]
+        end
       end
       
       # @!method tooltip(*val)
@@ -494,7 +643,11 @@ module PBR
       # @yieldparam arguments [Array<Object>] event arguments
       # @return [Browser::DOM::Event::Callback]
       def on e, &b
-        element.on(e, &b)
+        element.on(e) do |*o|
+          o[0].prevent if !events_enabled
+          o[0].stop if !events_enabled
+          b.call(*o) unless !events_enabled()
+        end
       end
       
       # Removes an event listener

@@ -98,7 +98,7 @@ module PBR
       def initialize *o
         super
         
-        element.on :keypress do |e|
+        on :keypress do |e|
           if (e.code == 13)
               activate()
               next false;
