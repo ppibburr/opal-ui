@@ -20,6 +20,16 @@ module PBR
         
         return result
       end
+      
+      def events_enabled *o
+        result = super
+        
+        children do |c|
+          c.events_enabled(*o)
+        end
+        
+        return result
+      end      
 
       # Adds a child Widget
       #

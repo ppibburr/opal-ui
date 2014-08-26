@@ -80,10 +80,20 @@ module PBR
   # A GUI ToolKit in your Browser
   module OpalUI;
     class Widget
+      def self.inherited cls
+        Widget::Interface.registry[cls.class_name] = cls
+      end
+    
       # Implemented by Widget and widget interfaces
       module Interface
         def self.extended cls
           cls.send :extend, GetSetChain
+          registry[cls.class_name] = cls
+        end
+        
+        @@registry = {}
+        def self.registry
+          @@registry
         end
         
         def style *o, &b
@@ -111,7 +121,7 @@ module PBR
       style do
         display :flex
         overflow :hidden
-         
+        resize :none, "!important"
         focus do
           outline 0
         end
@@ -119,8 +129,17 @@ module PBR
       
       def self.wrap q
         raise "Not a #{self}: #{q}" unless q.class_names.index(class_name) 
+        
+        a = Widget::Interface.registry.keys & q.class_names
+        
+        iface = Widget::Interface.registry[a.find_all do |n|
+          iface = Widget::Interface.registry[n]
+          iface.ancestors.index(Widget)
+        end.last]
+    
+        raise "Element not castable to `Widget::Interface`" unless iface
       
-        ins = allocate
+        ins = iface.send :allocate
         ins.instance_variable_set "@element", q
         return ins
       end
@@ -242,17 +261,23 @@ module PBR
           text_element["contenteditable"] = true
         end
         
-      def sensitive bool
-        super
-        
-        if bool
-          element["contenteditable"] = true
-        else
-          element["contenteditable"] = false
+        get_set_chain :editable do
+          proc do |t,k,val,_|
+            t == :set ? text_element["contenteditable"] = val : text_element["contenteditable"] == "true"
+          end        
         end
         
-        return self
-      end        
+        def sensitive *bool
+          result = super
+          editable(*bool)
+          return result
+        end        
+        
+        def events_enabled(*bool)
+          result = super
+          editable(*bool)
+          return result
+        end
       end
       
       # Widgets contents overflow is scrolled
@@ -282,6 +307,7 @@ module PBR
       #    Image.new(:src=>"images/foo.png",
       #              :size=>[24,24])
       def initialize options = {}
+        insensitive_on_throb(true)
         @element = $document.create_element(self.class.tag_name.to_s.upcase)
 
         self.class.ancestors.find_all do |q| q.is_a?(Interface) end.reverse.each do |q|
@@ -324,7 +350,11 @@ module PBR
         end      
       end
       
+      # An activity indicator function template
       class Throb
+        # @param widget [Widget] the widget to indicate activity
+        # @param b [Proc] code to execute per tick, or omit to use default
+        # @yieldparam t [Throb] self
         def initialize widget, &b
           @block = b
           @widget = widget
@@ -332,33 +362,42 @@ module PBR
           @running = false
         end
       
+        # Set the code to execute per tick
+        # @param b [Proc] code to execute
+        # @yieldparam t [self]
         def set_block &b
           @block = b
         end
       
-         def running?
-           @running
-         end
-      
+        # @return [Boolean] true if running
+        def running?
+          @running
+        end
+        
+        # Run the throb
+        # @param int [Float] tick interval
+        # @return [void]
         def run(int=0.1)
           @state = @widget.sensitive()
           @running = true
           @widget.sensitive(false) if @widget.insensitive_on_throb()
-        
+          
           @int = int
-        
+          
           @proc ||= proc do
             @block.call(self) if @block
             if !running?
               @widget.sensitive(@state) if @widget.insensitive_on_throb() 
             end
           end
-          
+            
           @interval = @proc.every(@int)
         end
-        
+          
         alias :throb :run
-        
+          
+        # Stop throbbing
+        # @return [void]
         def stop
           @running = false
           @interval.stop   
@@ -366,19 +405,7 @@ module PBR
         end
       end
       
-      class << self
-        extend GetSetChain
-        
-        get_set_chain :insensitive_on_throb
-      end
-      
-      insensitive_on_throb(true)
-      
-      get_set_chain :insensitive_on_throb do |t,k,_|
-        proc do |t,k,val,_|
-          t == :set ? @insensitive_on_throb = val : @insensitive_on_throb == nil ? self.class.insensitive_on_throb : @insensitive_on_throb
-        end
-      end
+      get_set_chain :insensitive_on_throb
       
       get_set_chain :throb do |t,k,*o|
         amt = 0.1
@@ -418,6 +445,7 @@ module PBR
         end
       end
       
+      # Are we indicating activity?
       def throbbing?
         return get_throb.running?
       end

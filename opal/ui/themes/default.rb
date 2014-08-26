@@ -142,7 +142,6 @@ module PBR
       end 
      
       style PBR::OpalUI::Widget do
-        resize! :none
         color "#000"
         
         rule "&.pbr-opalui-widget-insensitive" do

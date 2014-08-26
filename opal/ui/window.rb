@@ -6,7 +6,7 @@ module PBR
       
       style do
         position :absolute
-        resize :both
+        resize :both, "!important"
         
         rule ".#{PBR::OpalUI::Window.class_name}-inner" do
           display :flex

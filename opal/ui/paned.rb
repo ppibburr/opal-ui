@@ -43,11 +43,15 @@ class PBR::OpalUI
         a = (@dragging["#{dir}_a"] + amt)
         b = (@dragging["#{dir}_b"] - amt)   
         
-        drag_target.children[0].element.style["#{dir}"] = a.px
-        drag_target.children[1].element.style["#{dir}"] = b.px
+        drag_target.children[0].element.style["flex-basis"] = 0.px
+        drag_target.children[1].element.style["flex-basis"] = 0.px
         
-        drag_target.children[0].element.style[:'flex-grow'] = 0
-        drag_target.children[1].element.style[:'flex-grow'] = 0      
+        w = b+a
+        bb = b/w.to_f
+        aa = a/w.to_f
+        
+        drag_target.children[0].element.style[:'flex-grow'] = aa
+        drag_target.children[1].element.style[:'flex-grow'] = bb     
       end
     end
     
