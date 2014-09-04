@@ -307,8 +307,9 @@ module PBR
       #    Image.new(:src=>"images/foo.png",
       #              :size=>[24,24])
       def initialize options = {}
+        options[:tag_name] ||= self.class.tag_name
         insensitive_on_throb(true)
-        @element = $document.create_element(self.class.tag_name.to_s.upcase)
+        @element = $document.create_element(options[:tag_name].to_s.upcase)
 
         self.class.ancestors.find_all do |q| q.is_a?(Interface) end.reverse.each do |q|
           element.add_class q.class_name
@@ -584,7 +585,7 @@ module PBR
         elsif k == :opacity
           [element.style![:opacity] || (!element.style[:opacity] ? 1 : element.style[:opacity]), :to_f, nil]
         else
-          [element.style![k] || element.style[k], :to_i, nil]
+          [element.style![k] || element.style[:"min-#{k}"], :to_i, nil]
         end
       end
       
@@ -717,6 +718,36 @@ module PBR
       private
       def init
       
+      end
+      
+      def display= val
+        element.style[:display] = val
+      end
+      
+      class Style
+        def [] k
+         comp = element.style![k]
+         if !comp or comp = ""
+           s = element.style[k]
+           if !s or s == ""
+             return s if s != comp
+           end
+         end
+         return comp
+        end
+        
+        def []= k,v
+          element.style[k] = v
+        end
+        
+        attr_reader :element
+        def initialize e
+          @element = e
+        end
+      end
+      
+      def style
+        return Style.new(element)
       end
     end
   end

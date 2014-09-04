@@ -15,10 +15,12 @@ module PBR
       end
         
       style PBR::OpalUI::Window do
-        Helper.border(self, color: "#B6A5A5")
-        background color: "#D6D6CE"
-        box shadow:[4.px, 5.px, 17.px, "#090909"]
-        border [1.px, :solid, "#413A3A"]
+        rule ".pbr-opalui-window-outer" do
+          Helper.border(self, color: "#B6A5A5")
+          background color: "#D6D6CE"
+          box shadow:[4.px, 5.px, 5.px, "#090909"]
+          border [1.px, :solid, "#413A3A"]
+        end
       end
       
       style PBR::OpalUI::Window::Titlebar do

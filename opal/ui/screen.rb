@@ -12,6 +12,8 @@ module PBR::OpalUI
           color-stop(0, #CD5AB7),
           color-stop(1, #75C8F5)
         );
+        overflow: hidden;
+        display: inline;
         background-image: -o-linear-gradient(bottom, #CD5AB7 0%, #75C8F5 100%);
         background-image: -moz-linear-gradient(bottom, #CD5AB7 0%, #75C8F5 100%);
         background-image: -webkit-linear-gradient(bottom, #CD5AB7 0%, #75C8F5 100%);
@@ -24,7 +26,7 @@ module PBR::OpalUI
     # @param target [Browser::DOM::Element] the element to wrap
     def initialize target = $document.body, *opts
       if target == $document.body
-        [:height, :'min-height', :'max-height'].each do |prop|
+        [:height, :'min-height', :'max-height', :width, :"min-width", :"max-width"].each do |prop|
           target.style[prop] = "100vh"
         end      
       end
